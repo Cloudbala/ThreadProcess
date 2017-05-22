@@ -15,7 +15,9 @@ public class ImplRun implements Runnable {
         for (int i = 0; i < 5; i++) {
             System.out.println(Thread.currentThread().getName());
             try {
+                System.out.println(Thread.currentThread().getState());
                 Thread.sleep(1000);
+                System.out.println(Thread.currentThread().getState());
                 System.out.println(num + i);
             } catch (Exception e) {
                 System.out.println(e);
