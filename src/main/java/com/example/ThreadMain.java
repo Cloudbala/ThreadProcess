@@ -4,10 +4,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TestPocApplication {
+public class ThreadMain {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TestPocApplication.class, args);
+		SpringApplication.run(ThreadMain.class, args);
 		System.out.println("Balaji");
+
+
 	}
 }
