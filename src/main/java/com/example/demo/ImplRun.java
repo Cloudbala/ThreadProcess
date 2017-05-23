@@ -12,12 +12,15 @@ public class ImplRun implements Runnable {
     }
 
     public void run() {
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 10; i++) {
             System.out.println(Thread.currentThread().getName());
             try {
-                System.out.println(Thread.currentThread().getState());
+               // System.out.println(Thread.currentThread().getState());
                 Thread.sleep(1000);
-                System.out.println(Thread.currentThread().getState());
+                while(i==6||i==7){
+                    Thread.yield();
+                }
+                //System.out.println(Thread.currentThread().getState());
                 System.out.println(num + i);
             } catch (Exception e) {
                 System.out.println(e);

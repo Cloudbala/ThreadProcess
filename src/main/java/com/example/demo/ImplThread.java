@@ -19,10 +19,14 @@ public class ImplThread extends Thread {
                 System.out.println(num + i);
             } catch (Exception e) {
                 System.out.println(e);
+
             }
 
         }
     }
+
+
+
 }
 
 
