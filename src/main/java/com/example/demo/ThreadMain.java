@@ -48,7 +48,7 @@ public class ThreadMain {
         it.start();*/
 
         // To create a Thread Pool
-        // ExecutorService exeSer= Executors.newFixedThreadPool(10);
+         ExecutorService exeSer= Executors.newFixedThreadPool(10);
     }
 
 }
