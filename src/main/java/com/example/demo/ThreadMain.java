@@ -50,18 +50,31 @@ public class ThreadMain {
         // To create a Thread Pool
         //   ExecutorService exeSer= Executors.newFixedThreadPool(10);
 
-        ExecutorService eserv = Executors.newFixedThreadPool(10);
+        /**
+         *
+         * Third Thread is used to test Thread Pool Implementation
+         * */
+       /* ExecutorService eserv = Executors.newFixedThreadPool(10);
         for (int i = 0; i < 10; i++) {
-            Runnable rserv = new ThirdImplRun(""+i);
+            Runnable rserv = new ThirdImplRun("" + i);
             eserv.execute(rserv);
         }
         eserv.shutdown();
-        while(!eserv.isTerminated()){
-
-            //System.out.println("threads");
+        while (!eserv.isTerminated()) {
+            System.out.println("Executor is still alive");
         }
-            System.out.println("Finished all threads");
+        System.out.println("Finished all threads");*/
+        /**
+         * Fourth Thread is tested on addShutdownHook(Thread Name)
+         */
+
+        FourthImplRun fr = new FourthImplRun("Fourth");
+        Thread fr1 = new Thread(fr);
+        Runtime run = Runtime.getRuntime();
+        run.addShutdownHook(fr1);
+
 
     }
+
 
 }
