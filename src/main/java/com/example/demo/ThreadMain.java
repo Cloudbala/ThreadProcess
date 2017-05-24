@@ -17,7 +17,7 @@ public class ThreadMain {
     public static void main(String[] args) {
         SpringApplication.run(ThreadMain.class, args);
 
-        ThreadGroup tg = new ThreadGroup("GroupA");
+      /*  ThreadGroup tg = new ThreadGroup("GroupA");
         ImplRun ir = new ImplRun(1);
         SecondImplRun sir = new SecondImplRun(1);
 
@@ -41,14 +41,27 @@ public class ThreadMain {
         System.out.println(t1.getName() + ":" + t1.getId() + ":" + t1.getPriority());
         if (t1.isAlive()) {
             System.out.println(Thread.currentThread().getState());
-        }
+        }*/
 
 // invokes the Thread class implementation
       /*  ImplThread it = new ImplThread(5);
         it.start();*/
 
         // To create a Thread Pool
-      //   ExecutorService exeSer= Executors.newFixedThreadPool(10);
+        //   ExecutorService exeSer= Executors.newFixedThreadPool(10);
+
+        ExecutorService eserv = Executors.newFixedThreadPool(10);
+        for (int i = 0; i < 10; i++) {
+            Runnable rserv = new ThirdImplRun(""+i);
+            eserv.execute(rserv);
+        }
+        eserv.shutdown();
+        while(!eserv.isTerminated()){
+
+            //System.out.println("threads");
+        }
+            System.out.println("Finished all threads");
+
     }
 
 }
